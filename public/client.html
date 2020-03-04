@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Chat Room</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+
+  <body>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+
+    <div class="container">
+      <div id="banner">
+        <h2 class="text-monospace">Chat Room</h2>
+      </div>  
+      <div class="row">
+        <div class="col-9 border border-bottom-0" id="left">
+          <div id="msgBox">
+            <ul id="messages"></ul>
+          </div>
+          <div id="inputBox">
+            <form>
+              <div class="input-group mb-3">
+                <input type="text" id="msgIn" class="form-control" placeholder="say something..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Send</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-3" id="right">
+          <div id="roomInfoBox" class="border">
+
+            <ul id="onlineUsers"></ul>
+          </div>
+          <div id="contactBox" class="bg-light border">
+            <div id="info">
+              <p class="text-center">SENG 513</p>
+              <p class="text-center">Jiecong Huang</p>
+              <p class="text-center">10167938</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

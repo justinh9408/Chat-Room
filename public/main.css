@@ -1,0 +1,101 @@
+body{
+	background-color: cornsilk;
+}
+#left{
+	padding: 0;
+	height: 500px;
+
+}
+#right{
+	padding: 0;
+	height: 500px;
+
+}
+
+#msgBox{
+	width: 100%;
+	height: 92%;
+	background-color: white;
+	overflow-y:scroll;/*Also...*/
+} 
+
+#messages {
+ list-style-type: none; 
+ margin: 0; 
+ padding: 0; 
+ position: absolute;
+ bottom: 10%;
+ max-height: 88%;
+
+ 
+ overflow-x:hidden;/*And the end of the important part*/
+}
+
+#messages li { padding: 5px 10px; width: 100%;}
+ul {
+	width: 98%;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+li { 
+	float: left;
+	/*text-align: right;*/
+}
+.msgTimestamp{
+	font-weight: 700;
+    font-size: 16px;
+    font-style: italic;
+    font-family: initial;
+}
+
+#inputBox{
+	padding: 0;
+	height: 7%;
+	width: 100%;
+
+}
+#inputBox form {
+	padding: 0;
+}
+
+#inputBox form input{
+
+	width: 89%;
+}
+
+#inputBox form button{
+	/*width: 10%;*/
+}
+
+
+#roomInfoBox{
+	width: 100%;
+	height: 50%;
+	background-color: white;
+} 
+
+#onlineUsers{
+	list-style-type: none; 
+	margin: 0; 
+	padding: 0; 
+}
+
+#onlineUsers li { padding: 5px 10px; width: 100%;}
+
+
+#contactBox{
+	height: 50%;
+	/*background-color: #49dee2; */
+}
+#info{
+	padding: 20%;
+}
+
+#info p{
+	font-weight: bold;
+}
+
+#selfUser{
+	font-weight: bold;
+}
