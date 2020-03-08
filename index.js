@@ -51,20 +51,28 @@ io.on('connection', function(socket){
         }
   		}else{
   			let oldUser = connectMap.get(socket.id);
+        io.emit('chat message', {'type' : 0, 'msg': oldUser.name + ' has changed his/her name to ' + newName});
   			oldUser.name = newName;
   			nameSet.add(newName);
   			connectMap.set(socket.id,oldUser);
+       
 	  		socket.emit('set name response', newName);
 	  		io.emit('onlineUsers', Array.from(connectMap.values()));
   		}
   		
   	}else if (data.msg.startsWith("/nickcolor ")) {
       let colorStr = data.msg.slice(11);
-      let oldUser = connectMap.get(socket.id)
-      oldUser.nameColor = colorStr;
-      connectMap.set(socket.id, oldUser);
-      console.log("color changed");
-      socket.emit('color set', Array.from(connectMap.values()));
+      if (colorStr.length != 6) {
+        socket.emit('chat message', {'type' : 0, 'msg': 'Wrong color code!'});
+      }else{
+        let oldUser = connectMap.get(socket.id)
+        oldUser.nameColor = colorStr;
+        connectMap.set(socket.id, oldUser);
+        console.log("color changed");
+        io.emit('chat message', {'type' : 0, 'msg': oldUser.name + ' has changed his/her name colour!'});
+        socket.emit('color set', Array.from(connectMap.values()));
+      }
+      
     }else if(data.msg.startsWith("/")){
       socket.emit('chat message', {'type' : 0, 'msg': 'Command doesn\' exist!'});
     }else{
